@@ -3,10 +3,7 @@ package com.xyueji.coldeye.admin.controller;
 import com.xyueji.coldeye.admin.service.MeterService;
 import com.xyueji.coldeye.common.admin.entity.MeterEntity;
 import com.xyueji.coldeye.common.utils.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
@@ -59,7 +56,7 @@ public class MeterController {
     * @apiVersion 1.0.0
     */
     @RequestMapping("list")
-    public ResultResp list(@RequestBody Map<String, Object> params) {
+    public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = meterService.queryPage(params);
         return ResultResp.ok(res.getPageMap());
     }

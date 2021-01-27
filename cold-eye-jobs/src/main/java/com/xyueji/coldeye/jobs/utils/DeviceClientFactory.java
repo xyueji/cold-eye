@@ -1,6 +1,6 @@
 package com.xyueji.coldeye.jobs.utils;
 
-import com.xyueji.coldeye.common.netty.entity.MessageEntity;
+import com.xyueji.coldeye.common.moniter.entity.MessageEntity;
 import com.xyueji.coldeye.common.utils.YmlUtil;
 import com.xyueji.coldeye.jobs.task.ClientDeviceHandler;
 import io.netty.bootstrap.Bootstrap;

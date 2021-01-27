@@ -5,10 +5,7 @@ import com.xyueji.coldeye.common.admin.entity.HostEntity;
 import com.xyueji.coldeye.common.utils.MD5Util;
 import com.xyueji.coldeye.common.utils.PageUtils;
 import com.xyueji.coldeye.common.utils.ResultResp;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -56,7 +53,7 @@ public class HostController {
     * @apiVersion 1.0.0
     */
     @RequestMapping("list")
-    public ResultResp list(@RequestBody Map<String, Object> params) {
+    public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = hostService.queryPage(params);
         return ResultResp.ok(res.getPageMap());
     }

@@ -1,4 +1,4 @@
-package com.xyueji.coldeye.common.netty.entity;
+package com.xyueji.coldeye.common.moniter.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.xyueji.coldeye.common.constant.TConstants;

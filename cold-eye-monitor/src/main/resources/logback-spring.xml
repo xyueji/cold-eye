@@ -2,7 +2,7 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/defaults.xml" />
     <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
-    <property name="LOG_FILE" value="logs/cold-eye-admin.log" /> <!-- log目录 -->
+    <property name="LOG_FILE" value="logs/cold-eye-moniter.log" /> <!-- log目录 -->
     <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36}[%L] - %msg%n </pattern> <!-- log打印的格式 -->

@@ -9,7 +9,7 @@ server:
     context-path: /cold
 spring:
   application:
-    name: cold-eye-admin
+    name: cold-eye-moniter
   # 环境 dev|test|prod
   profiles:
     active: dev
