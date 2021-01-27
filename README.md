@@ -113,4 +113,4 @@ docker安装软件
 
 
 ### 接口文档
-[[https://xyueji.github.io/cold-eye/api-doc/](https://xyueji.github.io/cold-eye/api-doc/)]([https://xyueji.github.io/cold-eye/api-doc/](https://xyueji.github.io/cold-eye/api-doc/))
+[https://xyueji.github.io/cold-eye/api-doc/](https://xyueji.github.io/cold-eye/api-doc/)
