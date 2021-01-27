@@ -1,0 +1,51 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8184
+  connection-timeout: 10000ms
+  servlet:
+    context-path: /cold
+
+netty:
+  host: cold.eye.com
+  port: 10010
+
+spring:
+  application:
+    name: cold-eye-jobs
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+
+# mybatis-plus
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  # 实体扫描
+  type-aliases-package: com.xyueji.coldeye.common.*.entity
+  global-config:
+    # 数据库相关配置
+    db-config:
+      # 主键类型
+      id-type: auto
+      # 字段策略
+      field-strategy: not_null
+      # 驼峰下划线转换
+      column-underline: true
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+  # 原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'

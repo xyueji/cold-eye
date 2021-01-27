@@ -1,0 +1,18 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://cold.eye.com:8001/eureka
+spring:
+  kafka:
+    bootstrap-servers: cold.eye.com:9092
+    listener: # 指定listener 容器中的线程数，用于提高并发量
+      concurrency: 5
+    producer:
+      retries: 3
+      batch-size: 10000
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: coldflink
+

@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+eureka:
+  instance: #Eureka实例
+    hostname: cold.eye.com #Eureka实例所在的主机名
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+    register-with-eureka: false #表示是否将自己注册到Eureka Server上，默认为true
+    fetch-registry: false       #表示是否从Eureka Server上获取注册信息，默认为true
+
+spring:
+  application:
+    name: cold-eye-eureka-server

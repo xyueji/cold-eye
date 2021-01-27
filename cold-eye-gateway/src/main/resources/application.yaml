@@ -1,0 +1,51 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8080
+  connection-timeout: 50000ms
+  servlet:
+    context-path: /cold
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://cold.eye.com:8001/eureka
+
+spring:
+  application:
+      name: cold-eye-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: cold-user-router
+        uri: lb://cold-eye-user
+        predicates:
+        - Path=/cold/sys/user/**
+
+      - id: cold-admin-router
+        uri: lb://cold-eye-admin
+        predicates:
+        - Path=/cold/admin/**
+
+      - id: cold-monitor-router
+        uri: lb://cold-eye-monitor
+        predicates:
+        - Path=/cold/device/monitor/**
+
+      - id: cold-jobs-router
+        uri: lb://cold-eye-jobs
+        predicates:
+        - Path=/cold/system/schedule/**
+
+      - id: cold-druid-router
+        uri: lb://cold-eye-druid
+        predicates:
+        - Path=/cold/apache-druid/query/**
+
+

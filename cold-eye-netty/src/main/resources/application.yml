@@ -1,0 +1,7 @@
+server:
+  port: 8186
+spring:
+  application:
+    name: cold-eye-netty
+  profiles:
+    active: dev
