@@ -73,29 +73,30 @@
 
 ```
 cold
-├── cold-user # 用户服务
-├── cold-admin # 业务管理、系统管理服务
-└── cold-common # 对象实体、公共组件
-└── cold-monitor # 实时数据查询
-└── cold-druid # 历史数据查询
-└── cold-eureka # Spring cloud服务注册中心
-└── cold-gateway # Spring cloud网关
-└── cold-flink # 实时数据处理
-└── cold-jobs # 分布式任务调度（硬件模拟）
-└── cold-netty-server # 设备报文接收服务
+├── cold-eye-user # 用户服务
+├── cold-eye-admin # 业务管理、系统管理服务
+└── cold-eye-common # 对象实体、公共组件
+└── cold-eye-monitor # 实时数据查询
+└── cold-eye-druid # 历史数据查询
+└── cold-eye-eureka # Spring cloud服务注册中心
+└── cold-eye-gateway # Spring cloud网关
+└── cold-eye-flink # 实时数据处理
+└── cold-eye-jobs # 分布式任务调度（硬件模拟）
+└── cold-eye-netty # 设备报文接收服务
+└── docs # 项目文档
 cold-ui         # 前台页面
 ```
 
 
-- cold-eureka 8001 服务注册中心
-- cold-gateway 8080 API网关，前端统一
-- cold-user 8185 用户服务
-- cold-admin 8181 管理服务
-- cold-druid 8182 Druid查询服务
-- cold-monitor 8183 实时查询服务
-- cold-jobs 8184 定时任务服务
-- cold-netty-server 10010 netty服务器
-- cold-ui 8000 web服务
+- cold-eye-eureka 8001 服务注册中心
+- cold-eye-gateway 8080 API网关，前端统一
+- cold-eye-user 8185 用户服务
+- cold-eye-admin 8181 管理服务
+- cold-eye-druid 8182 Druid查询服务
+- cold-eye-monitor 8183 实时查询服务
+- cold-eye-jobs 8184 定时任务服务
+- cold-eye-netty-server 10010 netty服务器
+- cold-eye-ui 8000 web服务
 
 
 
@@ -114,3 +115,4 @@ docker安装软件
 
 ### 接口文档
 [https://xyueji.github.io/cold-eye/api-doc/](https://xyueji.github.io/cold-eye/api-doc/)
+
