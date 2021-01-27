@@ -2,15 +2,14 @@ package com.xyueji.coldeye.admin.controller;
 
 import com.xyueji.coldeye.admin.service.MeterService;
 import com.xyueji.coldeye.common.admin.entity.MeterEntity;
-import com.xyueji.coldeye.common.utils.MD5Util;
-import com.xyueji.coldeye.common.utils.PageUtils;
-import com.xyueji.coldeye.common.utils.ResultResp;
+import com.xyueji.coldeye.common.utils.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.io.Serializable;
 import java.util.Map;
 
 /**
@@ -149,6 +148,9 @@ public class MeterController {
     public ResultResp save(@RequestBody MeterEntity meterEntity) {
         meterEntity.setId(MD5Util.enCodeByMd5(meterEntity.toString()));
         meterService.save(meterEntity);
+
+        JedisUtil.Strings strings = JedisUtil.getInstance().new Strings();
+        strings.set(meterEntity.getMeterCode(), SerializeUtil.serialize(meterEntity));
         return ResultResp.ok();
     }
 
@@ -208,6 +210,9 @@ public class MeterController {
     @RequestMapping("update")
     public ResultResp update(@RequestBody MeterEntity meterEntity) {
         meterService.updateById(meterEntity);
+
+        JedisUtil.Strings strings = JedisUtil.getInstance().new Strings();
+        strings.set(meterEntity.getMeterCode(), SerializeUtil.serialize(meterEntity));
         return ResultResp.ok();
     }
 
@@ -235,6 +240,8 @@ public class MeterController {
     @RequestMapping("delete")
     public ResultResp delete(String id) {
         meterService.removeById(id);
+
+        JedisUtil.getInstance().getJedis().del(meterService.getById(id).getMeterCode());
         return ResultResp.ok();
     }
 }

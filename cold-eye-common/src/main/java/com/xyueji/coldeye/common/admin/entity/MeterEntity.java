@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.xyueji.coldeye.common.constant.TConstants;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,7 +13,9 @@ import java.util.Date;
  * @description
  */
 @TableName(TConstants.T_METER)
-public class MeterEntity {
+public class MeterEntity implements Serializable {
+    public final static long serialVersionUID = 1L;
+
     @TableId
     private String id;
     private String meterCode;
