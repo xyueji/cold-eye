@@ -3,13 +3,13 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
-  port: 8181
+  port: 8183
   connection-timeout: 10000ms
   servlet:
     context-path: /cold
 spring:
   application:
-    name: cold-eye-moniter
+    name: cold-eye-monitor
   # 环境 dev|test|prod
   profiles:
     active: dev

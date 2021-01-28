@@ -1,6 +1,6 @@
 package com.xyueji.coldeye.jobs.utils;
 
-import com.xyueji.coldeye.common.moniter.entity.MessageEntity;
+import com.xyueji.coldeye.common.monitor.entity.MessageEntity;
 import com.xyueji.coldeye.common.utils.YmlUtil;
 import com.xyueji.coldeye.jobs.task.ClientDeviceHandler;
 import io.netty.bootstrap.Bootstrap;
@@ -108,7 +108,7 @@ public class DeviceClientFactory {
      */
     private String getRandomMsg(String meterCode) {
         MessageEntity message = new MessageEntity();
-        message.setMetercode(meterCode);
+        message.setMeterCode(meterCode);
 
         // 设置随机温度
         int maxTem = 100;

@@ -1,7 +1,7 @@
-package com.xyueji.coldeye.common.moniter.dao;
+package com.xyueji.coldeye.common.monitor.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.xyueji.coldeye.common.moniter.entity.MessageEntity;
+import com.xyueji.coldeye.common.monitor.entity.MessageEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

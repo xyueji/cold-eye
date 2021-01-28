@@ -64,7 +64,11 @@ public class JedisUtil implements Serializable {
         //在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
         config.setTestOnBorrow(true);
         //redis未设置密码：
-        jedisPool = new JedisPool(config, "172.17.0.143", 7379);
+        try {
+            jedisPool = new JedisPool(config, "cold.eye.com",6379);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public JedisPool getPool() {

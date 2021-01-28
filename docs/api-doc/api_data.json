@@ -1,5 +1,33 @@
 [
   {
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "optional": false,
+            "field": "varname1",
+            "description": "<p>No type.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "varname2",
+            "description": "<p>With type.</p>"
+          }
+        ]
+      }
+    },
+    "type": "",
+    "url": "",
+    "version": "0.0.0",
+    "filename": "cold-eye/docs/api-doc/main.js",
+    "group": "/Users/xiongzhigang/xiong/project/cold-eye/docs/api-doc/main.js",
+    "groupTitle": "/Users/xiongzhigang/xiong/project/cold-eye/docs/api-doc/main.js",
+    "name": ""
+  },
+  {
     "type": "GET",
     "url": "admin/company/delete",
     "title": "删除公司信息",
@@ -699,6 +727,60 @@
     "filename": "cold-eye/cold-eye-admin/src/main/java/com/xyueji/coldeye/admin/controller/HostController.java",
     "groupTitle": "HostController",
     "name": "GetAdminHostUpdate"
+  },
+  {
+    "type": "GET",
+    "url": "device/monitor/realtime",
+    "title": "实时报警",
+    "description": "<p>实时报警</p>",
+    "group": "MessageController",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "page",
+            "description": "<p>当前页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "pagesize",
+            "description": "<p>页大小</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "meterCode",
+            "description": "<p>仪器ID</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "请求示例:",
+          "content": "{\n  \"page\": 1,\n  \"pagesize\": 10,\n  \"meterCode\": \"xxx\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "成功响应:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "cold-eye/cold-eye-monitor/src/main/java/com/xyueji/coldeye/monitor/controller/MessageController.java",
+    "groupTitle": "MessageController",
+    "name": "GetDeviceMonitorRealtime"
   },
   {
     "type": "GET",

@@ -1,4 +1,4 @@
-package com.xyueji.coldeye.moniter.config;
+package com.xyueji.coldeye.monitor.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.springframework.context.annotation.Bean;

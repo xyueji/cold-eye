@@ -1,12 +1,12 @@
 package com.xyueji.coldeye.admin.controller;
 
 import com.xyueji.coldeye.admin.service.MeterService;
+import com.xyueji.coldeye.common.utils.JedisUtil;
 import com.xyueji.coldeye.common.admin.entity.MeterEntity;
 import com.xyueji.coldeye.common.utils.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.io.Serializable;
 import java.util.Map;
 
 /**
