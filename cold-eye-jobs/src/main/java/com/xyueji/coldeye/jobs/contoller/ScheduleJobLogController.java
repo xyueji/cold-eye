@@ -24,20 +24,57 @@ public class ScheduleJobLogController {
     private ScheduleJobLogService scheduleJobLogService;
 
     /**
-     * 定时任务日志列表
-     */
+    * @api {GET} system/schedule/log/list 定时任务日志列表
+    * @apiDescription 定时任务日志列表
+    * @apiGroup ScheduleJobLogController
+    * @apiParam {Integer} page 当前页
+     * @apiParam {Integer} pagesize 页大小
+    *
+    * @apiParamExample {json} 请求示例:
+    * {
+    *   "page": 1,
+    *   "pagesize": 10,
+    *   "beanName": "m"
+    * }
+    * @apiSuccessExample {json} 成功响应:
+    * HTTP/1.1 200 OK
+    * {
+    *   "code":"0",
+    *   "msg":"success",
+    *   "data":{
+    *
+    *   }
+    * }
+    * @apiVersion 1.0.0
+    */
     @RequestMapping("/list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils page = scheduleJobLogService.queryPage(params);
-        return ResultResp.ok().put("page", page);
+        return ResultResp.success(page);
     }
 
     /**
-     * 定时任务日志信息
+     * @api {GET} system/schedule/log/info/{logId} 定时任务日志信息
+     * @apiDescription 定时任务日志列表
+     * @apiGroup ScheduleJobLogController
+     *
+     * @apiParamExample {json} 请求示例:
+     * {
+     * }
+     * @apiSuccessExample {json} 成功响应:
+     * HTTP/1.1 200 OK
+     * {
+     *   "code":"0",
+     *   "msg":"success",
+     *   "data":{
+     *
+     *   }
+     * }
+     * @apiVersion 1.0.0
      */
     @RequestMapping("/info/{logId}")
     public ResultResp info(@PathVariable("logId") Long logId) {
         ScheduleJobLogEntity log = scheduleJobLogService.getById(logId);
-        return ResultResp.ok().put("log", log);
+        return ResultResp.success(log);
     }
 }

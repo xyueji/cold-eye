@@ -50,6 +50,6 @@ public class MessageController {
     public ResultResp realtime(@RequestParam Map<String, Object> params) {
         PageUtils page = messageService.queryPage(params);
 
-        return ResultResp.ok(page.getPageMap());
+        return ResultResp.success(page.getPageMap());
     }
 }

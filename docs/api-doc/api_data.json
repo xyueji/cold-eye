@@ -97,7 +97,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"id\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n    \"company\": \"迅达仓储\",\n    \"abbreviation\": \"迅达\",\n    \"companyAddress\": \"北京市昌平区\",\n    \"companyPhone\": \"12241234\",\n    \"managementName\": \"张三\",\n    \"managementPhone\": \"22134234\",\n    \"leader\": \"李四\",\n    \"leaderPhone\": \"41243\",\n    \"message\": \"\",\n    \"webAddress\": \"\",\n    \"companyType\": \"民企\",\n    \"createdTime\": \"2021-01-29 14:36:50\",\n    \"updateTime\": \"2021-01-29 14:36:50\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -151,7 +151,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"totalCount\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"currPage\": 1,\n    \"list\": [\n      {\n        \"id\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n        \"company\": \"迅达仓储\",\n        \"abbreviation\": \"迅达\",\n        \"companyAddress\": \"北京市昌平区\",\n        \"companyPhone\": \"12241234\",\n        \"managementName\": \"张三\",\n        \"managementPhone\": \"22134234\",\n        \"leader\": \"李四\",\n        \"leaderPhone\": \"41243\",\n        \"message\": \"\",\n        \"webAddress\": \"\",\n        \"companyType\": \"民企\",\n        \"createdTime\": \"2021-01-29 14:36:50\",\n        \"updateTime\": \"2021-01-29 14:36:50\"\n      }\n    ],\n    \"pageMap\": {\n      \"total\": 1,\n      \"page\": 1,\n      \"items\": [\n        {\n          \"id\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n          \"company\": \"迅达仓储\",\n          \"abbreviation\": \"迅达\",\n          \"companyAddress\": \"北京市昌平区\",\n          \"companyPhone\": \"12241234\",\n          \"managementName\": \"张三\",\n          \"managementPhone\": \"22134234\",\n          \"leader\": \"李四\",\n          \"leaderPhone\": \"41243\",\n          \"message\": \"\",\n          \"webAddress\": \"\",\n          \"companyType\": \"民企\",\n          \"createdTime\": \"2021-01-29 14:36:50\",\n          \"updateTime\": \"2021-01-29 14:36:50\"\n        }\n      ]\n    }\n  }\n}",
           "type": "json"
         }
       ]
@@ -587,7 +587,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"id\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n    \"hostCode\": \"H20210129\",\n    \"hostName\": \"H20210129\",\n    \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n    \"houseCode\": \"house1\",\n    \"houseName\": \"昌平一号仓\",\n    \"hostStatus\": 1,\n    \"hostModel\": \"xxx\",\n    \"simCode\": \"2112324\",\n    \"createdTime\": \"2021-01-29 14:38:16\",\n    \"updateTime\": \"2021-01-29 14:38:16\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -662,7 +662,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"totalCount\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"currPage\": 1,\n    \"list\": [\n      {\n        \"id\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n        \"hostCode\": \"H20210129\",\n        \"hostName\": \"H20210129\",\n        \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n        \"houseCode\": \"house1\",\n        \"houseName\": \"昌平一号仓\",\n        \"hostStatus\": 1,\n        \"hostModel\": \"xxx\",\n        \"simCode\": \"2112324\",\n        \"createdTime\": \"2021-01-29 14:38:16\",\n        \"updateTime\": \"2021-01-29 14:38:16\"\n      }\n    ],\n    \"pageMap\": {\n      \"total\": 1,\n      \"page\": 1,\n      \"items\": [\n        {\n          \"id\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n          \"hostCode\": \"H20210129\",\n          \"hostName\": \"H20210129\",\n          \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n          \"houseCode\": \"house1\",\n          \"houseName\": \"昌平一号仓\",\n          \"hostStatus\": 1,\n          \"hostModel\": \"xxx\",\n          \"simCode\": \"2112324\",\n          \"createdTime\": \"2021-01-29 14:38:16\",\n          \"updateTime\": \"2021-01-29 14:38:16\"\n        }\n      ]\n    }\n  }\n}",
           "type": "json"
         }
       ]
@@ -1063,7 +1063,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"totalCount\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"currPage\": 1,\n    \"list\": [\n      {\n        \"id\": \"aac3a130a319f3e71c89b48323874834\",\n        \"meterCode\": \"m20210129\",\n        \"meterName\": \"m20210129\",\n        \"hostId\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n        \"hostCode\": \"H20210129\",\n        \"hostName\": \"H20210129\",\n        \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n        \"houseCode\": \"house1\",\n        \"houseName\": \"昌平一号仓\",\n        \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n        \"companyName\": \"迅达仓储\",\n        \"meterStatus\": 1,\n        \"maxTem\": 80,\n        \"minTem\": -10,\n        \"maxHum\": 30,\n        \"minHum\": 10,\n        \"meterInterval\": 1,\n        \"remarks\": \"\",\n        \"createdTime\": \"2021-01-29 14:38:55\",\n        \"updateTime\": \"2021-01-29 14:38:55\"\n      }\n    ],\n    \"pageMap\": {\n      \"total\": 1,\n      \"page\": 1,\n      \"items\": [\n        {\n          \"id\": \"aac3a130a319f3e71c89b48323874834\",\n          \"meterCode\": \"m20210129\",\n          \"meterName\": \"m20210129\",\n          \"hostId\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n          \"hostCode\": \"H20210129\",\n          \"hostName\": \"H20210129\",\n          \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n          \"houseCode\": \"house1\",\n          \"houseName\": \"昌平一号仓\",\n          \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n          \"companyName\": \"迅达仓储\",\n          \"meterStatus\": 1,\n          \"maxTem\": 80,\n          \"minTem\": -10,\n          \"maxHum\": 30,\n          \"minHum\": 10,\n          \"meterInterval\": 1,\n          \"remarks\": \"\",\n          \"createdTime\": \"2021-01-29 14:38:55\",\n          \"updateTime\": \"2021-01-29 14:38:55\"\n        }\n      ]\n    }\n  }\n}",
           "type": "json"
         }
       ]
@@ -1215,7 +1215,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"id\": \"aac3a130a319f3e71c89b48323874834\",\n    \"meterCode\": \"m20210129\",\n    \"meterName\": \"m20210129\",\n    \"hostId\": \"436afea4d22ca5847eddcd367e3ac3b4\",\n    \"hostCode\": \"H20210129\",\n    \"hostName\": \"H20210129\",\n    \"houseId\": \"efc0e2f5988676b44b10ff8364cd9253\",\n    \"houseCode\": \"house1\",\n    \"houseName\": \"昌平一号仓\",\n    \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n    \"companyName\": \"迅达仓储\",\n    \"meterStatus\": 1,\n    \"maxTem\": 80,\n    \"minTem\": -10,\n    \"maxHum\": 30,\n    \"minHum\": 10,\n    \"meterInterval\": 1,\n    \"remarks\": \"\",\n    \"createdTime\": \"2021-01-29 14:38:55\",\n    \"updateTime\": \"2021-01-29 14:38:55\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -1733,6 +1733,82 @@
     "name": "GetSystemScheduleUpdate"
   },
   {
+    "type": "GET",
+    "url": "system/schedule/log/info/{logId}",
+    "title": "定时任务日志信息",
+    "description": "<p>定时任务日志列表</p>",
+    "group": "ScheduleJobLogController",
+    "parameter": {
+      "examples": [
+        {
+          "title": "请求示例:",
+          "content": "{\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "成功响应:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "cold-eye/cold-eye-jobs/src/main/java/com/xyueji/coldeye/jobs/contoller/ScheduleJobLogController.java",
+    "groupTitle": "ScheduleJobLogController",
+    "name": "GetSystemScheduleLogInfoLogid"
+  },
+  {
+    "type": "GET",
+    "url": "system/schedule/log/list",
+    "title": "定时任务日志列表",
+    "description": "<p>定时任务日志列表</p>",
+    "group": "ScheduleJobLogController",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "page",
+            "description": "<p>当前页</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "pagesize",
+            "description": "<p>页大小</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "请求示例:",
+          "content": "{\n  \"page\": 1,\n  \"pagesize\": 10,\n  \"beanName\": \"m\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "成功响应:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "cold-eye/cold-eye-jobs/src/main/java/com/xyueji/coldeye/jobs/contoller/ScheduleJobLogController.java",
+    "groupTitle": "ScheduleJobLogController",
+    "name": "GetSystemScheduleLogList"
+  },
+  {
     "type": "POST",
     "url": "sys/user/getToken",
     "title": "获取token",
@@ -1765,7 +1841,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"userId\": 1,\n  \"token\": \"16d6d32e087895ac8679fa6878dce80e\",\n  \"expireTime\": \"2021-02-02 07:41:20\",\n  \"updateTime\": \"2021-02-01 19:41:20\"\n}",
           "type": "json"
         }
       ]
@@ -1794,7 +1870,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"logintime\": \"\",\n    \"phone\": \"\",\n    \"name\": \"admin\",\n    \"company\": \"月迹\",\n    \"avatar\": \"\",\n    \"username\": \"admin\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -1841,7 +1917,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"userId\": 1,\n    \"token\": \"16d6d32e087895ac8679fa6878dce80e\",\n    \"expireTime\": \"2021-02-02 07:41:20\",\n    \"updateTime\": \"2021-02-01 19:41:20\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -1884,7 +1960,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": \"登出成功\"\n}",
           "type": "json"
         }
       ]
@@ -1964,7 +2040,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"id\": \"efc0e2f5988676b44b10ff8364cd9253\",\n    \"houseCode\": \"house1\",\n    \"houseName\": \"昌平一号仓\",\n    \"houseAddress\": \"回龙观\",\n    \"houseType\": 1,\n    \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n    \"companyName\": \"迅达仓储\",\n    \"principalName\": \"王五\",\n    \"principalTel\": \"34324\",\n    \"areaSize\": 0.0,\n    \"houseStatus\": 1,\n    \"createdTime\": \"2021-01-29 14:37:37\",\n    \"updateTime\": \"2021-01-29 14:37:37\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -2039,7 +2115,7 @@
       "examples": [
         {
           "title": "成功响应:",
-          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": 200,\n  \"data\": {\n    \"totalCount\": 1,\n    \"pageSize\": 10,\n    \"totalPage\": 1,\n    \"currPage\": 1,\n    \"list\": [\n      {\n        \"id\": \"efc0e2f5988676b44b10ff8364cd9253\",\n        \"houseCode\": \"house1\",\n        \"houseName\": \"昌平一号仓\",\n        \"houseAddress\": \"回龙观\",\n        \"houseType\": 1,\n        \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n        \"companyName\": \"迅达仓储\",\n        \"principalName\": \"王五\",\n        \"principalTel\": \"34324\",\n        \"areaSize\": 0.0,\n        \"houseStatus\": 1,\n        \"createdTime\": \"2021-01-29 14:37:37\",\n        \"updateTime\": \"2021-01-29 14:37:37\"\n      }\n    ],\n    \"pageMap\": {\n      \"total\": 1,\n      \"page\": 1,\n      \"items\": [\n        {\n          \"id\": \"efc0e2f5988676b44b10ff8364cd9253\",\n          \"houseCode\": \"house1\",\n          \"houseName\": \"昌平一号仓\",\n          \"houseAddress\": \"回龙观\",\n          \"houseType\": 1,\n          \"companyId\": \"24b6c5ab1f922ac0b1976f410d78e527\",\n          \"companyName\": \"迅达仓储\",\n          \"principalName\": \"王五\",\n          \"principalTel\": \"34324\",\n          \"areaSize\": 0.0,\n          \"houseStatus\": 1,\n          \"createdTime\": \"2021-01-29 14:37:37\",\n          \"updateTime\": \"2021-01-29 14:37:37\"\n        }\n      ]\n    }\n  }\n}",
           "type": "json"
         }
       ]

@@ -44,10 +44,12 @@ public class UserController {
      * @apiSuccessExample {json} 成功响应:
      * HTTP/1.1 200 OK
      * {
-     *   "code":"0",
-     *   "msg":"success",
-     *   "data":{
-     *
+     *   "status": 200,
+     *   "data": {
+     *     "userId": 1,
+     *     "token": "16d6d32e087895ac8679fa6878dce80e",
+     *     "expireTime": "2021-02-02 07:41:20",
+     *     "updateTime": "2021-02-01 19:41:20"
      *   }
      * }
      * @apiVersion 1.0.0
@@ -57,7 +59,7 @@ public class UserController {
         UserEntity userEntity = userService.getUserByName(userVo.getUsername());
 
         if (userEntity == null || ! userEntity.getPassword().equals(new Sha256Hash(userVo.getPassword(), userEntity.getSalt()).toHex())) {
-            return ResultResp.error(HttpStatus.SC_FORBIDDEN, "用户名或密码错误");
+            return new ResultResp(HttpStatus.SC_FORBIDDEN, "用户名或密码错误");
         }
 
         return userTokenService.createToken(userEntity.getUserId());
@@ -76,11 +78,10 @@ public class UserController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
-    *   }
+    *   "userId": 1,
+    *   "token": "16d6d32e087895ac8679fa6878dce80e",
+    *   "expireTime": "2021-02-02 07:41:20",
+    *   "updateTime": "2021-02-01 19:41:20"
     * }
     * @apiVersion 1.0.0
     */
@@ -102,18 +103,15 @@ public class UserController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
-    *   }
+    *   "status": 200,
+    *   "data": "登出成功"
     * }
     * @apiVersion 1.0.0
     */
     @PostMapping("logout")
     public ResultResp logout(@RequestHeader( value = "token") String token) throws Exception {
         userTokenService.logout(token);
-        return ResultResp.ok();
+        return ResultResp.success("登出成功");
     }
 
     /**
@@ -128,10 +126,14 @@ public class UserController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "logintime": "",
+    *     "phone": "",
+    *     "name": "admin",
+    *     "company": "月迹",
+    *     "avatar": "",
+    *     "username": "admin"
     *   }
     * }
     * @apiVersion 1.0.0
@@ -146,6 +148,6 @@ public class UserController {
         map.put("avatar", "");
         map.put("username", user.getUsername());
         map.put("logintime", "");
-        return ResultResp.ok(map);
+        return ResultResp.success(map);
     }
 }

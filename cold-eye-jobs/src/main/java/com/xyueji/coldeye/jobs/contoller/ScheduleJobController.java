@@ -49,7 +49,7 @@ public class ScheduleJobController {
     @RequestMapping("/list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils page = scheduleJobService.queryPage(params);
-        return ResultResp.ok().put("page", page);
+        return ResultResp.success(page);
     }
 
     /**
@@ -72,7 +72,7 @@ public class ScheduleJobController {
     @RequestMapping("/info/{jobId}")
     public ResultResp info(@PathVariable("jobId") Long jobId) {
         ScheduleJobEntity schedule = scheduleJobService.getById(jobId);
-        return ResultResp.ok().put("schedule", schedule);
+        return ResultResp.success(schedule);
     }
 
     /**
@@ -104,7 +104,7 @@ public class ScheduleJobController {
     public ResultResp save(@RequestBody ScheduleJobEntity scheduleJob) {
         ValidatorUtils.validateEntity(scheduleJob);
         scheduleJobService.saveJob(scheduleJob);
-        return ResultResp.ok();
+        return ResultResp.success("保存成功！");
     }
 
     /**
@@ -137,7 +137,7 @@ public class ScheduleJobController {
     public ResultResp update(@RequestBody ScheduleJobEntity scheduleJob) {
         ValidatorUtils.validateEntity(scheduleJob);
         scheduleJobService.update(scheduleJob);
-        return ResultResp.ok();
+        return ResultResp.success("更新成功！");
     }
 
     /**
@@ -164,7 +164,7 @@ public class ScheduleJobController {
     @RequestMapping("/delete")
     public ResultResp delete(@RequestBody Long[] jobIds) {
         scheduleJobService.deleteBatch(jobIds);
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 
     /**
@@ -191,7 +191,7 @@ public class ScheduleJobController {
     @RequestMapping("/run")
     public ResultResp run(@RequestBody Long[] jobIds) {
         scheduleJobService.run(jobIds);
-        return ResultResp.ok();
+        return ResultResp.success("执行成功！");
     }
 
     /**
@@ -218,7 +218,7 @@ public class ScheduleJobController {
     @RequestMapping("/pause")
     public ResultResp pause(@RequestBody Long[] jobIds) {
         scheduleJobService.pause(jobIds);
-        return ResultResp.ok();
+        return ResultResp.success("暂停成功！");
     }
 
     /**
@@ -245,6 +245,6 @@ public class ScheduleJobController {
     @RequestMapping("/resume")
     public ResultResp resume(@RequestBody Long[] jobIds) {
         scheduleJobService.resume(jobIds);
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 }

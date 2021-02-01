@@ -47,10 +47,64 @@ public class MeterController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "totalCount": 1,
+    *     "pageSize": 10,
+    *     "totalPage": 1,
+    *     "currPage": 1,
+    *     "list": [
+    *       {
+    *         "id": "aac3a130a319f3e71c89b48323874834",
+    *         "meterCode": "m20210129",
+    *         "meterName": "m20210129",
+    *         "hostId": "436afea4d22ca5847eddcd367e3ac3b4",
+    *         "hostCode": "H20210129",
+    *         "hostName": "H20210129",
+    *         "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *         "houseCode": "house1",
+    *         "houseName": "昌平一号仓",
+    *         "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *         "companyName": "迅达仓储",
+    *         "meterStatus": 1,
+    *         "maxTem": 80,
+    *         "minTem": -10,
+    *         "maxHum": 30,
+    *         "minHum": 10,
+    *         "meterInterval": 1,
+    *         "remarks": "",
+    *         "createdTime": "2021-01-29 14:38:55",
+    *         "updateTime": "2021-01-29 14:38:55"
+    *       }
+    *     ],
+    *     "pageMap": {
+    *       "total": 1,
+    *       "page": 1,
+    *       "items": [
+    *         {
+    *           "id": "aac3a130a319f3e71c89b48323874834",
+    *           "meterCode": "m20210129",
+    *           "meterName": "m20210129",
+    *           "hostId": "436afea4d22ca5847eddcd367e3ac3b4",
+    *           "hostCode": "H20210129",
+    *           "hostName": "H20210129",
+    *           "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *           "houseCode": "house1",
+    *           "houseName": "昌平一号仓",
+    *           "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *           "companyName": "迅达仓储",
+    *           "meterStatus": 1,
+    *           "maxTem": 80,
+    *           "minTem": -10,
+    *           "maxHum": 30,
+    *           "minHum": 10,
+    *           "meterInterval": 1,
+    *           "remarks": "",
+    *           "createdTime": "2021-01-29 14:38:55",
+    *           "updateTime": "2021-01-29 14:38:55"
+    *         }
+    *       ]
+    *     }
     *   }
     * }
     * @apiVersion 1.0.0
@@ -58,7 +112,7 @@ public class MeterController {
     @RequestMapping("list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = meterService.queryPage(params);
-        return ResultResp.ok(res.getPageMap());
+        return ResultResp.success(res);
     }
 
     /**
@@ -85,7 +139,7 @@ public class MeterController {
     @RequestMapping("info/{id}")
     public ResultResp info(@PathVariable("id") String id) {
         MeterEntity meterEntity = meterService.getById(id);
-        return ResultResp.ok().put("meter", meterEntity);
+        return ResultResp.success(meterEntity);
     }
 
     /**
@@ -133,10 +187,28 @@ public class MeterController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "id": "aac3a130a319f3e71c89b48323874834",
+    *     "meterCode": "m20210129",
+    *     "meterName": "m20210129",
+    *     "hostId": "436afea4d22ca5847eddcd367e3ac3b4",
+    *     "hostCode": "H20210129",
+    *     "hostName": "H20210129",
+    *     "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *     "houseCode": "house1",
+    *     "houseName": "昌平一号仓",
+    *     "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *     "companyName": "迅达仓储",
+    *     "meterStatus": 1,
+    *     "maxTem": 80,
+    *     "minTem": -10,
+    *     "maxHum": 30,
+    *     "minHum": 10,
+    *     "meterInterval": 1,
+    *     "remarks": "",
+    *     "createdTime": "2021-01-29 14:38:55",
+    *     "updateTime": "2021-01-29 14:38:55"
     *   }
     * }
     * @apiVersion 1.0.0
@@ -148,7 +220,7 @@ public class MeterController {
 
         JedisUtil.Strings strings = JedisUtil.getInstance().new Strings();
         strings.set(meterEntity.getMeterCode(), SerializeUtil.serialize(meterEntity));
-        return ResultResp.ok();
+        return ResultResp.success("保存成功！");
     }
 
     /**
@@ -210,7 +282,7 @@ public class MeterController {
 
         JedisUtil.Strings strings = JedisUtil.getInstance().new Strings();
         strings.set(meterEntity.getMeterCode(), SerializeUtil.serialize(meterEntity));
-        return ResultResp.ok();
+        return ResultResp.success("更新成功！");
     }
 
     /**
@@ -239,6 +311,6 @@ public class MeterController {
         meterService.removeById(id);
 
         JedisUtil.getInstance().getJedis().del(meterService.getById(id).getMeterCode());
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 }

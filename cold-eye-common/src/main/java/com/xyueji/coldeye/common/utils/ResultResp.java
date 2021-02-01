@@ -10,49 +10,75 @@ import java.util.Map;
  * @date 2021-01-01 16:05
  * @description
  */
-public class ResultResp extends HashMap<String, Object> {
+public class ResultResp {
+    private static final int OK_STATUS = 200;
+    private static final int ERR_STATUS = 500;
+    private static final int NO_LOGIN_STATUS = 3;
+    public static final ResultResp SUCCESSED = new ResultResp(OK_STATUS, "SUCCESS");
+    public static final ResultResp FAILED = new ResultResp(ERR_STATUS, "FAIL");
+    public static final ResultResp NO_LOGIN = new ResultResp(NO_LOGIN_STATUS,"请先登录");
+
+    private Integer status;
+    private String message;
+    private Object data;
+
+    public ResultResp(Integer status, Object data) {
+        this.status = status;
+        this.data = data;
+    }
+
+    /**
+     * 只提示用户信息，无data
+     * @param status
+     * @param message
+     */
+    public ResultResp(Integer status, String  message) {
+        this.status = status;
+        this.message = message;
+    }
     public ResultResp() {
-        put("code", 0);
-        put("msg", "success");
     }
 
-    @Override
-    public ResultResp put(String key, Object value) {
-        super.put(key, value);
-        return this;
+    public static ResultResp failed(String errMsg) {
+        return new ResultResp(ERR_STATUS, errMsg);
     }
 
-    public static ResultResp error() {
-        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, "未知异常，请联系管理员");
+
+    /**
+     * 提示alarm
+     * @param alarmMsg
+     * @param alarmCode
+     * @return
+     */
+    public static ResultResp alarm(String alarmMsg,int alarmCode) {
+        return new ResultResp(alarmCode, alarmMsg);
     }
 
-    public static ResultResp error(String msg) {
-        return error(HttpStatus.SC_INTERNAL_SERVER_ERROR, msg);
+    public static ResultResp success(Object data) {
+        return new ResultResp(OK_STATUS, data);
     }
 
-    public static ResultResp ok() {
-        return new ResultResp();
+    public Integer getStatus() {
+        return status;
     }
 
-    public static ResultResp ok(String msg) {
-        ResultResp resultResp = new ResultResp();
-        resultResp.put("msg", msg);
-
-        return resultResp;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
-    public static ResultResp ok(Map<String, Object> map) {
-        ResultResp resultResp = new ResultResp();
-        resultResp.putAll(map);
-
-        return resultResp;
+    public String getMessage() {
+        return message;
     }
 
-    public static ResultResp error(int code, String msg) {
-        ResultResp resultResp = new ResultResp();
-        resultResp.put("code", code);
-        resultResp.put("msg", msg);
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-        return resultResp;
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
     }
 }

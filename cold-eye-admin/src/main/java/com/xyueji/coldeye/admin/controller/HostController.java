@@ -44,10 +44,46 @@ public class HostController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "totalCount": 1,
+    *     "pageSize": 10,
+    *     "totalPage": 1,
+    *     "currPage": 1,
+    *     "list": [
+    *       {
+    *         "id": "436afea4d22ca5847eddcd367e3ac3b4",
+    *         "hostCode": "H20210129",
+    *         "hostName": "H20210129",
+    *         "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *         "houseCode": "house1",
+    *         "houseName": "昌平一号仓",
+    *         "hostStatus": 1,
+    *         "hostModel": "xxx",
+    *         "simCode": "2112324",
+    *         "createdTime": "2021-01-29 14:38:16",
+    *         "updateTime": "2021-01-29 14:38:16"
+    *       }
+    *     ],
+    *     "pageMap": {
+    *       "total": 1,
+    *       "page": 1,
+    *       "items": [
+    *         {
+    *           "id": "436afea4d22ca5847eddcd367e3ac3b4",
+    *           "hostCode": "H20210129",
+    *           "hostName": "H20210129",
+    *           "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *           "houseCode": "house1",
+    *           "houseName": "昌平一号仓",
+    *           "hostStatus": 1,
+    *           "hostModel": "xxx",
+    *           "simCode": "2112324",
+    *           "createdTime": "2021-01-29 14:38:16",
+    *           "updateTime": "2021-01-29 14:38:16"
+    *         }
+    *       ]
+    *     }
     *   }
     * }
     * @apiVersion 1.0.0
@@ -55,7 +91,7 @@ public class HostController {
     @RequestMapping("list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = hostService.queryPage(params);
-        return ResultResp.ok(res.getPageMap());
+        return ResultResp.success(res);
     }
 
     /**
@@ -71,10 +107,19 @@ public class HostController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "id": "436afea4d22ca5847eddcd367e3ac3b4",
+    *     "hostCode": "H20210129",
+    *     "hostName": "H20210129",
+    *     "houseId": "efc0e2f5988676b44b10ff8364cd9253",
+    *     "houseCode": "house1",
+    *     "houseName": "昌平一号仓",
+    *     "hostStatus": 1,
+    *     "hostModel": "xxx",
+    *     "simCode": "2112324",
+    *     "createdTime": "2021-01-29 14:38:16",
+    *     "updateTime": "2021-01-29 14:38:16"
     *   }
     * }
     * @apiVersion 1.0.0
@@ -82,7 +127,7 @@ public class HostController {
     @RequestMapping("info/{id}")
     public ResultResp info(@PathVariable("id") String id) {
         HostEntity hostEntity = hostService.getById(id);
-        return ResultResp.ok().put("host", hostEntity);
+        return ResultResp.success(hostEntity);
     }
 
     /**
@@ -124,7 +169,7 @@ public class HostController {
     public ResultResp save(@RequestBody HostEntity hostEntity) {
         hostEntity.setId(MD5Util.enCodeByMd5(hostEntity.toString()));
         hostService.save(hostEntity);
-        return ResultResp.ok();
+        return ResultResp.success("保存成功！");
     }
 
     /**
@@ -165,7 +210,7 @@ public class HostController {
     @RequestMapping("update")
     public ResultResp update(@RequestBody HostEntity hostEntity) {
         hostService.updateById(hostEntity);
-        return ResultResp.ok();
+        return ResultResp.success("更新成功！");
     }
 
     /**
@@ -192,6 +237,6 @@ public class HostController {
     @RequestMapping("delete")
     public ResultResp delete(String id) {
         hostService.removeById(id);
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 }

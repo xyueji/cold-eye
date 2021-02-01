@@ -45,10 +45,50 @@ public class WareHouseController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "totalCount": 1,
+    *     "pageSize": 10,
+    *     "totalPage": 1,
+    *     "currPage": 1,
+    *     "list": [
+    *       {
+    *         "id": "efc0e2f5988676b44b10ff8364cd9253",
+    *         "houseCode": "house1",
+    *         "houseName": "昌平一号仓",
+    *         "houseAddress": "回龙观",
+    *         "houseType": 1,
+    *         "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *         "companyName": "迅达仓储",
+    *         "principalName": "王五",
+    *         "principalTel": "34324",
+    *         "areaSize": 0.0,
+    *         "houseStatus": 1,
+    *         "createdTime": "2021-01-29 14:37:37",
+    *         "updateTime": "2021-01-29 14:37:37"
+    *       }
+    *     ],
+    *     "pageMap": {
+    *       "total": 1,
+    *       "page": 1,
+    *       "items": [
+    *         {
+    *           "id": "efc0e2f5988676b44b10ff8364cd9253",
+    *           "houseCode": "house1",
+    *           "houseName": "昌平一号仓",
+    *           "houseAddress": "回龙观",
+    *           "houseType": 1,
+    *           "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *           "companyName": "迅达仓储",
+    *           "principalName": "王五",
+    *           "principalTel": "34324",
+    *           "areaSize": 0.0,
+    *           "houseStatus": 1,
+    *           "createdTime": "2021-01-29 14:37:37",
+    *           "updateTime": "2021-01-29 14:37:37"
+    *         }
+    *       ]
+    *     }
     *   }
     * }
     * @apiVersion 1.0.0
@@ -56,7 +96,7 @@ public class WareHouseController {
     @RequestMapping("list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = wareHouseService.queryPage(params);
-        return ResultResp.ok(res.getPageMap());
+        return ResultResp.success(res);
     }
 
     /**
@@ -72,10 +112,21 @@ public class WareHouseController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "id": "efc0e2f5988676b44b10ff8364cd9253",
+    *     "houseCode": "house1",
+    *     "houseName": "昌平一号仓",
+    *     "houseAddress": "回龙观",
+    *     "houseType": 1,
+    *     "companyId": "24b6c5ab1f922ac0b1976f410d78e527",
+    *     "companyName": "迅达仓储",
+    *     "principalName": "王五",
+    *     "principalTel": "34324",
+    *     "areaSize": 0.0,
+    *     "houseStatus": 1,
+    *     "createdTime": "2021-01-29 14:37:37",
+    *     "updateTime": "2021-01-29 14:37:37"
     *   }
     * }
     * @apiVersion 1.0.0
@@ -83,7 +134,7 @@ public class WareHouseController {
     @RequestMapping("info/{id}")
     public ResultResp info(@PathVariable("id") String id) {
         WareHouseEntity warehouseEntity = wareHouseService.getById(id);
-        return ResultResp.ok().put("warehouse", warehouseEntity);
+        return ResultResp.success(warehouseEntity);
     }
 
     /**
@@ -133,7 +184,7 @@ public class WareHouseController {
     public ResultResp save(@RequestBody WareHouseEntity warehouseEntity) {
         warehouseEntity.setId(MD5Util.enCodeByMd5(warehouseEntity.toString()));
         wareHouseService.save(warehouseEntity);
-        return ResultResp.ok();
+        return ResultResp.success("保存成功！");
     }
 
     /**
@@ -182,7 +233,7 @@ public class WareHouseController {
     @RequestMapping("update")
     public ResultResp update(@RequestBody WareHouseEntity warehouseEntity) {
         wareHouseService.updateById(warehouseEntity);
-        return ResultResp.ok();
+        return ResultResp.success("更新成功！");
     }
 
     /**
@@ -209,6 +260,6 @@ public class WareHouseController {
     @RequestMapping("delete")
     public ResultResp delete(String id) {
         wareHouseService.removeById(id);
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 }

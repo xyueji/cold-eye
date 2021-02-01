@@ -38,10 +38,52 @@ public class CompanyController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "totalCount": 1,
+    *     "pageSize": 10,
+    *     "totalPage": 1,
+    *     "currPage": 1,
+    *     "list": [
+    *       {
+    *         "id": "24b6c5ab1f922ac0b1976f410d78e527",
+    *         "company": "迅达仓储",
+    *         "abbreviation": "迅达",
+    *         "companyAddress": "北京市昌平区",
+    *         "companyPhone": "12241234",
+    *         "managementName": "张三",
+    *         "managementPhone": "22134234",
+    *         "leader": "李四",
+    *         "leaderPhone": "41243",
+    *         "message": "",
+    *         "webAddress": "",
+    *         "companyType": "民企",
+    *         "createdTime": "2021-01-29 14:36:50",
+    *         "updateTime": "2021-01-29 14:36:50"
+    *       }
+    *     ],
+    *     "pageMap": {
+    *       "total": 1,
+    *       "page": 1,
+    *       "items": [
+    *         {
+    *           "id": "24b6c5ab1f922ac0b1976f410d78e527",
+    *           "company": "迅达仓储",
+    *           "abbreviation": "迅达",
+    *           "companyAddress": "北京市昌平区",
+    *           "companyPhone": "12241234",
+    *           "managementName": "张三",
+    *           "managementPhone": "22134234",
+    *           "leader": "李四",
+    *           "leaderPhone": "41243",
+    *           "message": "",
+    *           "webAddress": "",
+    *           "companyType": "民企",
+    *           "createdTime": "2021-01-29 14:36:50",
+    *           "updateTime": "2021-01-29 14:36:50"
+    *         }
+    *       ]
+    *     }
     *   }
     * }
     * @apiVersion 1.0.0
@@ -49,7 +91,7 @@ public class CompanyController {
     @RequestMapping("list")
     public ResultResp list(@RequestParam Map<String, Object> params) {
         PageUtils res = companyService.queryPage(params);
-        return ResultResp.ok(res.getPageMap());
+        return ResultResp.success(res);
     }
 
     /**
@@ -65,10 +107,22 @@ public class CompanyController {
     * @apiSuccessExample {json} 成功响应:
     * HTTP/1.1 200 OK
     * {
-    *   "code":"0",
-    *   "msg":"success",
-    *   "data":{
-    *
+    *   "status": 200,
+    *   "data": {
+    *     "id": "24b6c5ab1f922ac0b1976f410d78e527",
+    *     "company": "迅达仓储",
+    *     "abbreviation": "迅达",
+    *     "companyAddress": "北京市昌平区",
+    *     "companyPhone": "12241234",
+    *     "managementName": "张三",
+    *     "managementPhone": "22134234",
+    *     "leader": "李四",
+    *     "leaderPhone": "41243",
+    *     "message": "",
+    *     "webAddress": "",
+    *     "companyType": "民企",
+    *     "createdTime": "2021-01-29 14:36:50",
+    *     "updateTime": "2021-01-29 14:36:50"
     *   }
     * }
     * @apiVersion 1.0.0
@@ -76,7 +130,7 @@ public class CompanyController {
     @RequestMapping("info/{id}")
     public ResultResp info(@PathVariable("id") String id) {
         CompanyEntity companyEntity = companyService.getById(id);
-        return ResultResp.ok().put("company", companyEntity);
+        return ResultResp.success(companyEntity);
     }
 
     /**
@@ -126,7 +180,7 @@ public class CompanyController {
     public ResultResp save(@RequestBody CompanyEntity companyEntity) {
         companyEntity.setId(MD5Util.enCodeByMd5(companyEntity.toString()));
         companyService.save(companyEntity);
-        return ResultResp.ok();
+        return ResultResp.success("新增成功！");
     }
 
     /**
@@ -176,7 +230,7 @@ public class CompanyController {
     @RequestMapping("update")
     public ResultResp update(@RequestBody CompanyEntity companyEntity) {
         companyService.updateById(companyEntity);
-        return ResultResp.ok();
+        return ResultResp.success("更新成功！");
     }
 
     /**
@@ -203,6 +257,6 @@ public class CompanyController {
     @RequestMapping("delete")
     public ResultResp delete(String id) {
         companyService.removeById(id);
-        return ResultResp.ok();
+        return ResultResp.success("删除成功！");
     }
 }

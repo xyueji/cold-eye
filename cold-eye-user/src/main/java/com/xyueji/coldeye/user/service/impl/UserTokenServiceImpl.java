@@ -50,7 +50,7 @@ public class UserTokenServiceImpl extends ServiceImpl<UserTokenDao, UserTokenEnt
             this.updateById(userTokenEntity);
         }
 
-        return ResultResp.ok().put("token", token).put("expire", expireTime);
+        return ResultResp.success(userTokenEntity);
     }
 
     /**
