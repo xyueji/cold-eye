@@ -397,6 +397,128 @@
   },
   {
     "type": "GET",
+    "url": "apache-druid/query/select",
+    "title": "查询Druid中数据列表",
+    "description": "<p>查询Druid中数据列表</p>",
+    "group": "DruidController",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "meterCode",
+            "description": "<p>仪器编号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>起始日期</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>结束日期</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>条数</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "请求示例:",
+          "content": "{\n  \"meterCode\": \"xxx\",\n  \"startTime\": \"2021-01-31 00:00:00\",\n  \"endTime\": \"2021-02-31 00:00:00\",\n  \"limit\": 20\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "成功响应:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "cold-eye/cold-eye-druid/src/main/java/com/xyueji/coldeye/druid/controller/DruidController.java",
+    "groupTitle": "DruidController",
+    "name": "GetApacheDruidQuerySelect"
+  },
+  {
+    "type": "GET",
+    "url": "apache-druid/query/temhum",
+    "title": "查询Druid中温度湿度数据（设备最近10条数据）",
+    "description": "<p>查询Druid中温度湿度数据（设备最近10条数据）</p>",
+    "group": "DruidController",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "meterCode",
+            "description": "<p>仪器编号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "startTime",
+            "description": "<p>起始日期</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "endTime",
+            "description": "<p>结束日期</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "limit",
+            "description": "<p>条数</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "请求示例:",
+          "content": "{\n  \"meterCode\": \"xxx\",\n  \"startTime\": \"2021-01-31 00:00:00\",\n  \"endTime\": \"2021-02-31 00:00:00\",\n  \"limit\": 20\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "成功响应:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"code\":\"0\",\n  \"msg\":\"success\",\n  \"data\":{\n\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "filename": "cold-eye/cold-eye-druid/src/main/java/com/xyueji/coldeye/druid/controller/DruidController.java",
+    "groupTitle": "DruidController",
+    "name": "GetApacheDruidQueryTemhum"
+  },
+  {
+    "type": "GET",
     "url": "admin/host/delete",
     "title": "删除主机信息",
     "description": "<p>删除主机信息</p>",

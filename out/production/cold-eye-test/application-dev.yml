@@ -1,0 +1,4 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://cold.eye.com:8001/eureka

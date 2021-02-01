@@ -28,7 +28,6 @@
         <module>cold-eye-druid</module>
         <module>cold-eye-netty</module>
         <module>cold-eye-monitor</module>
-        <module>cold-eye-auth</module>
     </modules>
 
 

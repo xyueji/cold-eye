@@ -49,7 +49,7 @@ public class SinkToMysql extends RichSinkFunction<MessageEntity> {
     }
 
     private Connection getConnection() {
-        String url = "jdbc:mysql://cold.eye.com:3306/coldeye?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true";
+        String url = "jdbc:mysql://cold.eye.com:3306/cold_eye?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true";
         String driver = "com.mysql.jdbc.Driver";
         String username = "root";
         String password = "office-computer@xiong199467";
